@@ -1,4 +1,4 @@
-{% set version = '2.10.5' %}
+{% set version = "2.10.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/latentnet_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/latentnet/latentnet_{{ version }}.tar.gz
-  sha256: bb20afa74d631146feaae04d9b592294f681c274b59547c50dbb4613d471d217
+  sha256: 2654acc70ee65491b39fe134e6a2fe5d52bdb93811fb9f97ebf946bd5939707e
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -37,7 +37,7 @@ requirements:
     - r-mass
     - r-abind
     - r-coda >=0.17.1
-    - r-ergm >=3.9.0
+    - r-ergm >=4.2.0
     - r-mvtnorm
     - r-network
     - r-sna
@@ -48,7 +48,7 @@ requirements:
     - r-mass
     - r-abind
     - r-coda >=0.17.1
-    - r-ergm >=3.9.0
+    - r-ergm >=4.2.0
     - r-mvtnorm
     - r-network
     - r-sna
@@ -62,12 +62,10 @@ test:
 about:
   home: http://www.statnet.org
   license: GPL-3.0-only
-  summary: Fit and simulate latent position and cluster models for statistical networks. See
-    Krivitsky and Handcock (2008) <10.18637/jss.v024.i05> and Krivitsky, Handcock, Raftery,
-    and Hoff (2009) <10.1016/j.socnet.2009.04.001>.
+  summary: Fit and simulate latent position and cluster models for statistical networks. See Krivitsky and Handcock (2008) <10.18637/jss.v024.i05> and Krivitsky, Handcock, Raftery, and Hoff (2009) <10.1016/j.socnet.2009.04.001>.
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
     - LICENSE
 
 extra:
