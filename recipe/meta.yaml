@@ -37,7 +37,7 @@ requirements:
     - r-mass
     - r-abind
     - r-coda >=0.17.1
-    - r-ergm >=3.9.0
+    - r-ergm >=4.2.0
     - r-mvtnorm
     - r-network
     - r-sna
@@ -48,7 +48,7 @@ requirements:
     - r-mass
     - r-abind
     - r-coda >=0.17.1
-    - r-ergm >=3.9.0
+    - r-ergm >=4.2.0
     - r-mvtnorm
     - r-network
     - r-sna
