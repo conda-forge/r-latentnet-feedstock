@@ -1,6 +1,5 @@
 {% set version = "2.11.0" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-latentnet
@@ -13,8 +12,7 @@ source:
   sha256: 4fbcb08989d9cf913a49ea92cd0ef0aa10ef4b98f6179db9b8513e861701a0ed
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -44,7 +44,6 @@ requirements:
     - r-statnet.common >=4.1.0
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-mass
     - r-abind
     - r-coda >=0.17.1
